@@ -1,4 +1,6 @@
 FROM nginx
 RUN rm -rf /usr/share/nginx/html/index.html
-COPY roboshop.config /etc/nginx/default.d/roboshop.config
-ADD static /usr/share/nginx/html
+RUN rm -rf /etc/nginx/nginx.conf
+RUN rm -rf /etc/nginx/conf.d/default.conf
+COPY roboshop.config /etc/nginx/nginx.conf
+ADD static /usr/share/nginx/html/
